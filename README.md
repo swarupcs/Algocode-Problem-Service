@@ -1,6 +1,5 @@
 # Algocode Problem Setting service
 
-# Algocode Problem Setting service
 
 This microservice handles addition of problems and testcases along with solutions
 for algocode platform.
