@@ -23,6 +23,24 @@ class ProblemService {
     const problem = await this.problemRepository.getProblem(problemId);
     return problem;
   }
+
+  async deleteProblem(problemId) {
+    const problem = await this.problemRepository.deleteProblem(problemId);
+    return problem;
+  }
+
+  async updateProblem(problemId, updatedData) {
+    if (updatedData.description) {
+      updatedData.description = sanitizeMarkdownContent(
+        updatedData.description
+      );
+    }
+    const problem = await this.problemRepository.updateProblem(
+      problemId,
+      updatedData
+    );
+    return problem;
+  }
 }
 
 module.exports = ProblemService;
